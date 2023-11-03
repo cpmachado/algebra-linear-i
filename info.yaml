@@ -1,0 +1,17 @@
+codigo: 21002
+nome: Álgebra Linear I
+ano_lectivo: 2023
+semestre: 1
+ano: 1
+docente: Wolfram Bentz
+tema:
+  - nome: Matrizes e sistemas de equações lineares
+    codigo: 1
+  - nome: Determinantes e sistemas de equações lineares
+    codigo: 2
+  - nome: Espaços e subespaços vetoriais
+    codigo: 3
+  - nome: Aplicações lineares e matrizes
+    codigo: 4
+  - nome: Valores e vetores próprios
+    codigo: 5
