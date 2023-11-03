@@ -1,0 +1,795 @@
+\grupo{Operações com Matrizes}
+
+\exercicio{1}
+
+\begin{align*}
+	&A =
+	\begin{bmatrix}
+		1 & 1 & 1\\
+		1 & 1 & 1\\
+		0 & 0 & 0
+	\end{bmatrix},
+	X =
+	\begin{bmatrix*}
+		1\\
+		2\\
+		3
+	\end{bmatrix*},
+	X^T =
+	\begin{bmatrix*}
+		1 & 2 & 3
+	\end{bmatrix*},
+	B =
+	\begin{bmatrix*}
+		6\\
+		6\\
+		0
+	\end{bmatrix*},
+	D =
+	\begin{bmatrix}
+		1 & 2 & 3\\
+		0 & 4 & 5\\
+		0 & 0 & 6
+	\end{bmatrix},
+	E =
+	\begin{bmatrix}
+		1 & 2 & 3\\
+		0 & 4 & 5\\
+		0 & 0 & 6\\
+		0 & 0 & 0
+	\end{bmatrix}, \\
+	&F =
+	\begin{bmatrix}
+		1 & 0 & 0\\
+		0 & 4 & 0\\
+		0 & 0 & 6
+	\end{bmatrix},
+	G =
+	\begin{bmatrix*}
+		2 & 0 & 0\\
+		0 & 2 & 0\\
+		0 & 0 & 2
+	\end{bmatrix*},
+	H =
+	\begin{bmatrix}
+		1 & 0 & 0\\
+		2 & 3 & 0\\
+		4 & 0 & 6
+	\end{bmatrix},
+	I_3 =
+	\begin{bmatrix}
+		1 & 0 & 0\\
+		0 & 1 & 0\\
+		0 & 0 & 1
+	\end{bmatrix},
+	0_{3 \times 3} =
+	\begin{bmatrix}
+		0 & 0 & 0\\
+		0 & 0 & 0\\
+		0 & 0 & 0
+	\end{bmatrix}
+\end{align*}
+
+\alinea{a}
+
+\begin{itemize}
+	\item matrizes quadradas: $A, D, F, G, H, I_3, 0_{3\times3}$
+	\item matrizes triangulares superiores: $D, F, G, I_3, 0_{3\times3}$
+	\item matrizes triangulares inferiores: $F, G, H, I_3, 0_{3\times3}$
+	\item matrizes diagonais: $F, G, I_3, 0_{3\times3}$
+	\item matrizes escalares: $G, I_3, 0_{3\times3}$
+\end{itemize}
+
+\clearpage
+
+\alinea{b}
+
+\paragraph{} As operações que não são possíveis são devido aos operandos serem
+de classes de matriz diferentes.
+
+\paragraph{}Estas são:
+
+\begin{itemize}
+	\item $A + X$, porque $A \in \mathcal{M}_{3 \times 3}(\mathbb{K})$ e
+		$X \in \mathcal{M}_{3 \times 1}(\mathbb{K})$.
+	\item $D + E$, porque $D \in \mathcal{M}_{3 \times 3}(\mathbb{K})$ e
+		$E \in \mathcal{M}_{4 \times 3}(\mathbb{K})$.
+\end{itemize}
+
+\begin{align*}
+	A + D
+	&=
+	\begin{bmatrix*}
+		1 & 1 & 1\\
+		1 & 1 & 1\\
+		0 & 0 & 0
+	\end{bmatrix*}
+	+
+	\begin{bmatrix*}
+		1 & 2 & 3\\
+		0 & 4 & 5\\
+		0 & 0 & 6
+	\end{bmatrix*}
+	=
+	\begin{bmatrix*}
+		(1 + 1) & (1 + 2) & (1 + 3)\\
+		(1 + 0) & (1 + 4) & (1 + 5)\\
+		(0 + 0) & (0 + 0) & (0 + 6)
+	\end{bmatrix*}
+	=
+	\begin{bmatrix*}
+		2 & 3 & 4\\
+		1 & 5 & 6\\
+		0 & 0 & 6
+	\end{bmatrix*}\\
+	2A + D
+	&= A + (A + D)
+	=
+	\begin{bmatrix*}
+		1 & 1 & 1\\
+		1 & 1 & 1\\
+		0 & 0 & 0
+	\end{bmatrix*}
+	+
+	\begin{bmatrix*}
+		2 & 3 & 4\\
+		1 & 5 & 6\\
+		0 & 0 & 6
+	\end{bmatrix*}
+	=
+	\begin{bmatrix*}
+		(1 + 2) & (1 + 3) & (1 + 4)\\
+		(1 + 1) & (1 + 5) & (1 + 6)\\
+		(0 + 0) & (0 + 0) & (0 + 6)
+	\end{bmatrix*}
+	=
+	\begin{bmatrix*}
+		3 & 4 & 5\\
+		2 & 6 & 7\\
+		0 & 0 & 6
+	\end{bmatrix*} \\
+	2(A + D)
+	&=
+	2
+	\begin{bmatrix*}
+		2 & 3 & 4\\
+		1 & 5 & 6\\
+		0 & 0 & 6
+	\end{bmatrix*}
+	=
+	\begin{bmatrix*}[r]
+		4 & 6  & 8\\
+		2 & 10 & 12\\
+		0 & 0  & 12
+	\end{bmatrix*}\\
+	2A + 2D
+	&= 2(A + D)
+	=
+	\begin{bmatrix*}[r]
+		4 & 6  & 8\\
+		2 & 10 & 12\\
+		0 & 0  & 12
+	\end{bmatrix*}\\
+	D + F
+	&=
+	\begin{bmatrix*}
+		1 & 2 & 3\\
+		0 & 4 & 5\\
+		0 & 0 & 6
+	\end{bmatrix*}
+	+
+	\begin{bmatrix*}
+		1 & 0 & 0\\
+		0 & 4 & 0\\
+		0 & 0 & 6
+	\end{bmatrix*}
+	+
+	\begin{bmatrix*}
+		(1 + 1) & (2 + 0) & (3 + 0)\\
+		(0 + 0) & (4 + 4) & (5 + 0)\\
+		(0 + 0) & (0 + 0) & (6 + 6)
+	\end{bmatrix*}
+	=
+	\begin{bmatrix*}[r]
+		2 & 2 & 3\\
+		0 & 8 & 5\\
+		0 & 0 & 12
+	\end{bmatrix*}
+\end{align*}
+
+\alinea{c}
+
+\begin{align*}
+	G
+	=
+	\begin{bmatrix*}
+		2 & 0 & 0\\
+		0 & 2 & 0\\
+		0 & 0 & 2
+	\end{bmatrix*}
+	&=
+	2
+	\begin{bmatrix*}
+		1 & 0 & 0\\
+		0 & 1 & 0\\
+		0 & 0 & 1
+	\end{bmatrix*}
+	=
+	2 \; I_3\\
+	\begin{bmatrix*}
+		1\\
+		1\\
+		0
+	\end{bmatrix*}
+	+ 2
+	\begin{bmatrix*}
+		1\\
+		1\\
+		0
+	\end{bmatrix*}
+	+ 3
+	\begin{bmatrix*}
+		1\\
+		1\\
+		0
+	\end{bmatrix*}
+	&=
+	(1 + 2 + 3)
+	\begin{bmatrix*}
+		1\\
+		1\\
+		0
+	\end{bmatrix*}
+	=
+	\begin{bmatrix*}
+		6\\
+		6\\
+		0
+	\end{bmatrix*}
+	= B
+\end{align*}
+
+\alinea{d}
+
+\begin{align*}
+	&&2A + 3Y - G &= 0_{3 \times 3} \\
+	&\iff& Y &= \frac{1}{3}\left(G - 2A\right)\\
+	&&&=
+	\frac{1}{3}
+	\left(
+	\begin{bmatrix*}
+		2 & 0 & 0\\
+		0 & 2 & 0\\
+		0 & 0 & 2
+	\end{bmatrix*}
+	-
+	\begin{bmatrix*}
+		2 & 2 & 2\\
+		2 & 2 & 2\\
+		0 & 0 & 0\\
+	\end{bmatrix*}\right)\\
+	&&&=
+	\frac{1}{3}
+	\begin{bmatrix*}[r]
+		0            & -2 & -2\\
+		-2           & 0  & -2\\
+		0            & 0  & 2
+	\end{bmatrix*}\\
+	&&&=
+	\begin{bmatrix*}[r]
+		0            & -\frac{2}{3} & -\frac{2}{3}\\
+		-\frac{2}{3} & 0            & -\frac{2}{3}\\
+		0            & 0            & \frac{2}{3}
+	\end{bmatrix*}
+\end{align*}
+
+\clearpage
+
+\exercicio{2}
+
+\begin{align*}
+	(DH)_{3,2}
+	&=
+	\begin{bmatrix*}
+		0 & 0 & 6
+	\end{bmatrix*}
+	\begin{bmatrix*}
+		0\\
+		3\\
+		0
+	\end{bmatrix*}
+	= 0 \cdot 0 + 0 \cdot 3 + 6 \cdot 0 = 0\\
+	DH
+	&=
+	\begin{bmatrix}
+		1 & 2 & 3\\
+		0 & 4 & 5\\
+		0 & 0 & 6
+	\end{bmatrix}
+	\begin{bmatrix}
+		1 & 0 & 0\\
+		2 & 3 & 0\\
+		4 & 0 & 6
+	\end{bmatrix}
+	=
+	\begin{bmatrix*}[r]
+		17 & 6  & 18\\
+		28 & 12 & 30\\
+		24 & 0  & 36
+	\end{bmatrix*}
+	\\
+	HD
+	&=
+	\begin{bmatrix}
+		1 & 0 & 0\\
+		2 & 3 & 0\\
+		4 & 0 & 6
+	\end{bmatrix}
+	\begin{bmatrix}
+		1 & 2 & 3\\
+		0 & 4 & 5\\
+		0 & 0 & 6
+	\end{bmatrix}
+	=
+	\begin{bmatrix*}[r]
+		1 & 2  & 3\\
+		2 & 16 & 21\\
+		4 & 8  & 48
+	\end{bmatrix*}
+\end{align*}
+
+
+\exercicio{3}
+
+\paragraph{} Produtos de matrizes que não são possíveis devido às colunas do
+primeiro operando divergir do número de linhas do segundo operando:
+
+\begin{itemize}
+	\item $X A$
+	\item $A X^T$
+	\item $D E$
+\end{itemize}
+
+\begin{align*}
+	A X
+	&=
+	\begin{bmatrix*}
+		1 & 1 & 1\\
+		1 & 1 & 1\\
+		0 & 0 & 0
+	\end{bmatrix*}
+	\begin{bmatrix*}
+		1\\
+		2\\
+		3
+	\end{bmatrix*}
+	=
+	\begin{bmatrix*}
+		6\\
+		6\\
+		0
+	\end{bmatrix*}\\
+	X^T A
+	&=
+	\begin{bmatrix*}
+		1 & 2 & 3
+	\end{bmatrix*}
+	\begin{bmatrix*}
+		1 & 1 & 1\\
+		1 & 1 & 1\\
+		0 & 0 & 0
+	\end{bmatrix*}
+	=
+	\begin{bmatrix*}
+		3 & 3 & 3
+	\end{bmatrix*}
+	\\
+	E D
+	&=
+	\begin{bmatrix*}
+		1 & 2 & 3\\
+		0 & 4 & 5\\
+		0 & 0 & 6\\
+		0 & 0 & 0
+	\end{bmatrix*}
+	\begin{bmatrix*}
+		1 & 2 & 3\\
+		0 & 4 & 5\\
+		0 & 0 & 6
+	\end{bmatrix*}
+	=
+	\begin{bmatrix*}[r]
+		1 & 10 & 31\\
+		0 & 16 & 50\\
+		0 & 0  & 36\\
+		0 & 0  & 0
+	\end{bmatrix*}
+	\\
+	X X^T
+	&=
+	\begin{bmatrix*}
+		1\\
+		2\\
+		3
+	\end{bmatrix*}
+	\begin{bmatrix*}
+		1 & 2 & 3
+	\end{bmatrix*}
+	=
+	\begin{bmatrix*}
+		1 & 2 & 3\\
+		2 & 4 & 6\\
+		3 & 6 & 9\\
+	\end{bmatrix*}
+	\\
+	X^T X
+	&=
+	\begin{bmatrix*}
+		1 & 2 & 3
+	\end{bmatrix*}
+	\begin{bmatrix*}
+		1\\
+		2\\
+		3
+	\end{bmatrix*}
+	=
+	\begin{bmatrix*}
+		14
+	\end{bmatrix*}
+	\\
+	AG &= A \cdot 2 I_3 = 2 A I_3 = 2 A =
+	\begin{bmatrix*}
+		2 & 2 & 2\\
+		2 & 2 & 2\\
+		0 & 0 & 0
+	\end{bmatrix*}
+	\\
+	GA &= 2 I_3 A = 2 A=
+	\begin{bmatrix*}
+		2 & 2 & 2\\
+		2 & 2 & 2\\
+		0 & 0 & 0
+	\end{bmatrix*}
+\end{align*}
+
+\begin{align*}
+	AF
+	&=
+	\begin{bmatrix*}
+		1 & 1 & 1\\
+		1 & 1 & 1\\
+		0 & 0 & 0
+	\end{bmatrix*}
+	\begin{bmatrix*}
+		1 & 0 & 0\\
+		0 & 4 & 0\\
+		0 & 0 & 6
+	\end{bmatrix*}
+	=
+	\begin{bmatrix*}
+		1 & 4 & 6\\
+		1 & 4 & 6\\
+		0 & 0 & 0
+	\end{bmatrix*}
+	\\
+	FA
+	&=
+	\begin{bmatrix*}
+		1 & 0 & 0\\
+		0 & 4 & 0\\
+		0 & 0 & 6
+	\end{bmatrix*}
+	\begin{bmatrix*}
+		1 & 1 & 1\\
+		1 & 1 & 1\\
+		0 & 0 & 0
+	\end{bmatrix*}
+	=
+	\begin{bmatrix*}
+		1 & 1 & 1\\
+		4 & 4 & 4\\
+		0 & 0 & 0
+	\end{bmatrix*}
+	\\
+	A I_3 &= A\\
+	I_3 A &= A\\
+	D^2
+	&=
+	\begin{bmatrix*}
+		1 & 2 & 3\\
+		0 & 4 & 5\\
+		0 & 0 & 6
+	\end{bmatrix*}
+	\begin{bmatrix*}
+		1 & 2 & 3\\
+		0 & 4 & 5\\
+		0 & 0 & 6
+	\end{bmatrix*}
+	=
+	\begin{bmatrix*}[r]
+		1 & 10  & 31\\
+		0 & 16 & 50\\
+		0 & 0  & 36
+	\end{bmatrix*}
+	\\
+	H^2
+	&=
+	\begin{bmatrix*}
+		1 & 0 & 0\\
+		2 & 3 & 0\\
+		4 & 0 & 6
+	\end{bmatrix*}
+	\begin{bmatrix*}
+		1 & 0 & 0\\
+		2 & 3 & 0\\
+		4 & 0 & 6
+	\end{bmatrix*}
+	=
+	\begin{bmatrix*}[r]
+		1  & 0 & 0\\
+		8  & 9 & 0\\
+		28 & 0 & 36
+	\end{bmatrix*}
+	\\
+	F^2
+	&=
+	\begin{bmatrix*}
+		1 & 0 & 0\\
+		0 & 4 & 0\\
+		0 & 0 & 6
+	\end{bmatrix*}
+	\begin{bmatrix*}
+		1 & 0 & 0\\
+		0 & 4 & 0\\
+		0 & 0 & 6
+	\end{bmatrix*}
+	=
+	\begin{bmatrix*}[r]
+		1 & 0 & 0\\
+		0 & 16 & 0\\
+		0 & 0 & 36
+	\end{bmatrix*}
+	\\
+	F^3
+	&= F^2 F =
+	\begin{bmatrix*}[r]
+		1 & 0 & 0\\
+		0 & 16 & 0\\
+		0 & 0 & 36
+	\end{bmatrix*}
+	\begin{bmatrix*}
+		1 & 0 & 0\\
+		0 & 4 & 0\\
+		0 & 0 & 6
+	\end{bmatrix*}
+	=
+	\begin{bmatrix*}[r]
+		1 & 0 & 0\\
+		0 & 64 & 0\\
+		0 & 0 & 216
+	\end{bmatrix*}
+\end{align*}
+
+\exercicio{4}
+
+\begin{align*}
+	A =
+	\begin{bmatrix*}
+		1\\
+		2
+	\end{bmatrix*} \in \mathcal{M}_{2 \times 1}(\mathbb{K}),
+	B =
+	\begin{bmatrix*}
+		1 & 0\\
+		2 & 1\\
+		0 & 1
+	\end{bmatrix*}\in \mathcal{M}_{3 \times 2}(\mathbb{K}),
+	C =
+	\begin{bmatrix*}[r]
+		3 & 2 & 0\\
+		1 & 2 & -1
+	\end{bmatrix*}\in \mathcal{M}_{2 \times 3}(\mathbb{K})
+\end{align*}
+
+\paragraph{} Dado que $A$ tem um número de colunas diferentes do número de
+linhas de $B$ e $C$, os produtos $AB$ e $AC$ não são possíveis. Deste modo,
+teremos um produto $BC$ ou $CB$ que será multiplicado por $A$ à direita. Pelo
+mesmo raciocínio podemos excluir o produto $CA$, pelo que forçosamente
+será o produto $CBA$.
+
+\begin{align*}
+	CBA =
+	\begin{bmatrix*}[r]
+		3 & 2 & 0\\
+		1 & 2 & -1
+	\end{bmatrix*}
+	\begin{bmatrix*}
+		1 & 0\\
+		2 & 1\\
+		0 & 1
+	\end{bmatrix*}
+	\begin{bmatrix*}
+		1\\
+		2
+	\end{bmatrix*}
+	=
+	\begin{bmatrix*}
+		7 & 2\\
+		5 & 1
+	\end{bmatrix*}
+	\begin{bmatrix*}
+		1\\
+		2
+	\end{bmatrix*}
+	=
+	\begin{bmatrix*}
+		11\\
+		7
+	\end{bmatrix*}
+\end{align*}
+
+\clearpage
+
+\exercicio{5}
+
+\begin{proposicao}\label{prop:tema-1-ex5-1}
+	\begin{align*}
+		\forall a, b, c \in \mathbb{K},
+		\begin{bmatrix*}
+			a & b & c
+		\end{bmatrix*}
+		\begin{bmatrix*}
+			1.1 & 1.2 & 1.3\\
+			2.1 & 2.2 & 2.3\\
+			3.1 & 3.2 & 3.3
+		\end{bmatrix*}
+		=
+		a
+		\begin{bmatrix*}
+			1.1 & 1.2 & 1.3
+		\end{bmatrix*}
+		+
+		b
+		\begin{bmatrix*}
+			2.1 & 2.2 & 2.3
+		\end{bmatrix*}
+		+
+		c
+		\begin{bmatrix*}
+			3.1 & 3.2 & 3.3
+		\end{bmatrix*}
+	\end{align*}
+\end{proposicao}
+
+\begin{proof}
+	\begin{align*}
+		\begin{bmatrix*}
+			a & b & c
+		\end{bmatrix*}
+		\begin{bmatrix*}
+			1.1 & 1.2 & 1.3\\
+			2.1 & 2.2 & 2.3\\
+			3.1 & 3.2 & 3.3
+		\end{bmatrix*}
+	\end{align*}
+\end{proof}
+
+
+\begin{proposicao}\label{prop:tema-1-ex5-2}
+	\begin{align*}
+		\forall a, b, c \in \mathbb{K},
+		\begin{bmatrix*}
+			1.1 & 1.2 & 1.3\\
+			2.1 & 2.2 & 2.3\\
+			3.1 & 3.2 & 3.3
+		\end{bmatrix*}
+		\begin{bmatrix*}
+			a\\
+			b\\
+			c
+		\end{bmatrix*}
+		=
+		a
+		\begin{bmatrix*}
+			1.1\\
+			2.1\\
+			3.1
+		\end{bmatrix*}
+		+
+		b
+		\begin{bmatrix*}
+			1.2\\
+			2.2\\
+			3.2
+		\end{bmatrix*}
+		+
+		c
+		\begin{bmatrix*}
+			1.3\\
+			2.3\\
+			3.3
+		\end{bmatrix*}
+	\end{align*}
+\end{proposicao}
+
+\begin{proof}
+	\begin{align*}
+		\begin{bmatrix*}
+			1.1 & 1.2 & 1.3\\
+			2.1 & 2.2 & 2.3\\
+			3.1 & 3.2 & 3.3
+		\end{bmatrix*}
+		\begin{bmatrix*}
+			a\\
+			b\\
+			c
+		\end{bmatrix*}
+	\end{align*}
+\end{proof}
+
+
+
+\clearpage
+
+\exercicio{6}
+
+\begin{align*}
+	\begin{bmatrix*}
+		3 & 0 & 0\\
+		0 & 1 & 0\\
+		0 & 0 & 1
+	\end{bmatrix*}
+	\begin{bmatrix*}
+		1.1 & 1.2 & 1.3\\
+		2.1 & 2.2 & 2.3\\
+		3.1 & 3.2 & 3.3
+	\end{bmatrix*}
+	=
+	\begin{bmatrix*}
+		3.3 & 3.6 & 3.9\\
+		2.1 & 2.2 & 2.3\\
+		3.1 & 3.2 & 3.3
+	\end{bmatrix*}
+\end{align*}
+
+
+\exercicio{7}
+
+\begin{align*}
+	\begin{bmatrix*}
+		1 & 0 & 0\\
+		0 & 1 & 0\\
+		3 & 0 & 1
+	\end{bmatrix*}
+	\begin{bmatrix*}
+		1.1 & 1.2 & 1.3\\
+		2.1 & 2.2 & 2.3\\
+		3.1 & 3.2 & 3.3
+	\end{bmatrix*}
+	=
+	\begin{bmatrix*}
+		1.1 & 1.2 & 1.3\\
+		2.1 & 2.2 & 2.3\\
+		6.4 & 6.8 & 7.2
+	\end{bmatrix*}
+\end{align*}
+
+\exercicio{8}
+
+\exercicio{9}
+
+\alinea{a}
+
+\alinea{b}
+
+\alinea{c}
+
+\alinea{d}
+
+\exercicio{10}
+
+\exercicio{11}
+
+\exercicio{12}
+
+\exercicio{13}

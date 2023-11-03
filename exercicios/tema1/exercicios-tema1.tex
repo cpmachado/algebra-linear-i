@@ -1,0 +1,49 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[margin=2cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{csquotes}
+\usepackage[citestyle=authoryear]{biblatex}
+\usepackage[hidelinks]{hyperref}
+
+\addbibresource{bibliografia.bib}
+
+\title{
+	Álgebra Linear I\\
+	Exercícios do Tema 1: Matrizes\\
+	Proposta de Resolução
+}
+
+\author{
+	Carlos Pinto Machado
+	<\href{mailto:2200909@estudante.uab.pt}{2200909@estudante.uab.pt}>
+}
+
+\hypersetup{
+	pdfsubject = {Algebra Linear I},
+	pdftitle = {Exercícios do Tema 1: Matrizes(Proposta de Resolução)},
+	pdfauthor = {Carlos Pinto Machado(2200909)},
+	pdfcreator = {},
+	pdfproducer = {}
+}
+
+\newtheorem{proposicao}{Proposição}
+
+\input{exercicios/ex-cmds.tex}
+
+\begin{document}
+\maketitle
+
+\input{exercicios/tema1/operacoes-com-matrizes.tex}
+
+\clearpage
+
+\nocite{*}
+\printbibliography[title={Bibliografia},heading=bibintoc]
+
+\end{document}

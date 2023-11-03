@@ -1,0 +1,23 @@
+\newcommand{\grupo}[1]{
+	\begin{center}
+		\bfseries \Large #1
+	\end{center}
+	\phantomsection
+	\addcontentsline{toc}{section}{#1}
+}
+
+\newcommand{\exercicio}[1]{
+	\begin{flushleft}
+		\large #1.
+	\end{flushleft}
+	\phantomsection
+	\addcontentsline{toc}{subsection}{#1.}
+}
+
+\newcommand{\alinea}[1]{
+	\begin{flushleft}
+		\normalsize (#1)
+	\end{flushleft}
+	\phantomsection
+	\addcontentsline{toc}{subsubsection}{(#1)}
+}
