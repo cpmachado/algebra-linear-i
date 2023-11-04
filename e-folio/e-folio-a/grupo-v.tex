@@ -9,7 +9,7 @@
 		0 & 0 & \ldots & 0 & 0 & a_1\\
 		0 & 0 & \ldots & 0 & a_2 & *\\
 		0 & 0 & \ldots & a_3 & * & *\\
-		\vdots & \vdots & \ddots & \vdots & \vdots & \vdots\\
+		\vdots & \vdots & \iddots & \vdots & \vdots & \vdots\\
 		0 & a_{n -1} & \ldots & * & * & *\\
 		a_n & * & \ldots & * & * & *
 	\end{bmatrix*}
@@ -19,6 +19,17 @@
 \end{align*}
 
 \begin{proposition}
-	$\det A = \pm a_1a_2\ldots a_n$
+	$\det A = \pm \prod_{k=1}^{n} a_k$
 \end{proposition}
 
+\begin{proof}
+	\; \\
+	\begin{align*}
+		a_{ij} =
+		\begin{cases}
+			0, & j < n - i\\
+			a_i, & j = n - i \\
+			*, & j > n - i
+		\end{cases}
+	\end{align*}
+\end{proof}

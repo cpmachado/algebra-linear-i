@@ -2,26 +2,40 @@
 
 \exercicio{}
 
+\paragraph{Resposta:} É a opção d). $CB$ é invertível.
+
+
+
 \begin{align*}
-	A = 
-	\begin{bmatrix*}[r]
-		2  & 3\\
-		2  & 0\\
-		-3 & 1
-	\end{bmatrix*},\quad
-	B = 
-	\begin{bmatrix*}[r]
-		-3\\
-		1
-	\end{bmatrix*}\quad \text{ e }\quad
-	C =
+	CB =
 	\begin{bmatrix*}
 		1 & 2
 	\end{bmatrix*}
+	\begin{bmatrix*}[r]
+		-3\\
+		1
+	\end{bmatrix*}
+	=
+	\begin{bmatrix}
+		-1
+	\end{bmatrix} \implies \det (CB) = -1 \neq 0
 \end{align*}
 
 
 \exercicio{}
 
+\paragraph{Resposta:} É a opção b). $\det(-A(B + C)^{-1}) = 3i$.
+
 \paragraph{}Sejam $A, B, C \in \mathcal{M}_{4 \times 4}(\mathbb{C})$ tais que
-$\det A = 3$ e $\det(B + C) = i$.
+$\det A = 3$, e $\det(B + C) = i$.
+
+
+\begin{align*}
+	\det(-A(B + C)^{-1})
+		   &= (- \det A)  \cdot (\det(B + C))^{-1}\\
+		   &= -\frac{3}{i}
+		   = -\frac{3}{i} \cdot \frac{i}{i}
+		   = 3i
+\end{align*}
+
+
