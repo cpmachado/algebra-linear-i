@@ -2,40 +2,211 @@
 
 \exercicio{}
 
-\paragraph{Resposta:} É a opção d). $CB$ é invertível.
+\paragraph{\underline{Resposta}}
 
+\paragraph{}É a opção d). $CB$ é invertível.
 
+\paragraph{\underline{Justificação}}
 
 \begin{align*}
-	CB =
-	\begin{bmatrix*}
-		1 & 2
+	\intertext{Tem-se que as matrizes $A$, $B$ e $C$ são definidas por}
+	A =
+	\begin{bmatrix*}[r]
+		2  & 3\\
+		2  & 0\\
+		-3 & 1
 	\end{bmatrix*}
+	\in
+	\mathcal{M}_{3 \times 2}(\mathbb{K})
+	,\;
+	B =
 	\begin{bmatrix*}[r]
 		-3\\
 		1
 	\end{bmatrix*}
-	=
-	\begin{bmatrix}
-		-1
-	\end{bmatrix} \implies \det (CB) = -1 \neq 0
+	\in
+	\mathcal{M}_{2 \times 1}(\mathbb{K})
+	 \text{ e }
+	C =
+	\begin{bmatrix*}[r]
+		1  & 2
+	\end{bmatrix*}
+	\in
+	\mathcal{M}_{1 \times 2}(\mathbb{K})
+	.
 \end{align*}
+
+\begin{proposition}[negação da opção 1.a]\label{prop:i-1-a}
+	$AB$ é definido.
+\end{proposition}
+
+\begin{proof}
+	\; \\
+	Pela definição da matriz produto
+	\footcite[pág. 12, Definição 1.18: matriz produto]{Cabral2012},
+	esta só é definida se o número de colunas do
+	operando à esquerda for igual ao número de linhas do operando à
+	direita. Como
+	$A$ tem o mesmo número de colunas que o número de linhas de $B$,
+	então $AB$ é definido.\\
+\end{proof}
+
+\begin{proposition}[negação da opção 1.b]\label{prop:i-1-b}
+	$AC$ não é definido.
+\end{proposition}
+
+\begin{proof}
+	\; \\
+	Pela definição da matriz produto
+	\footcite[pág. 12, Definição 1.18: matriz produto]{Cabral2012},
+	esta só é definida se o número de colunas do
+	operando à esquerda for igual ao número de linhas do operando à
+	direita. Como
+	$A$ tem um número de colunas diferente do número de linhas de $C$,
+	então $AC$ não é definido.\\
+\end{proof}
+
+\begin{proposition}[negação da opção 1.c]\label{prop:i-1-c}
+	$(BC)^2$ não é invertível.
+\end{proposition}
+
+\begin{proof}
+	\; \\
+	Pela definição da matriz produto
+	\footcite[pág. 12, Definição 1.18: matriz produto]{Cabral2012},
+	tem-se que:
+	\begin{align*}
+		BC &=
+		\begin{bmatrix*}[r]
+			-3\\
+			1
+		\end{bmatrix*}
+		\begin{bmatrix*}[r]
+			1  & 2
+		\end{bmatrix*}
+		=
+		\begin{bmatrix*}[r]
+			-3  & -6\\
+			1  & 2\\
+		\end{bmatrix*}
+		\intertext{
+			Dado que as linhas de $BC$ não são linearmente
+			independentes, e que a operação $l_i + \beta l_j$
+			não tem impacto no determinante
+			\footcite[pág. 138, Proposição 3.19, alínea 3.]{Cabral2012},
+			tem-se que:}
+			BC&
+		\overset{l_1 + 3 l_2}{\longrightarrow}
+		\begin{bmatrix*}[r]
+			0  & 0\\
+			1  & 2\\
+		\end{bmatrix*}
+		\implies \det(BC) = 0
+		\intertext{
+			Dado que o determinante da matriz produto é igual ao produto dos
+			determinantes do operandos
+			\footcite[pág. 145, Proposição 3.24]{Cabral2012}, tem-se que:
+		}
+		\det((BC)^2) = (\det(BC))^2 = 0
+	\end{align*}
+	Dado que a matriz só é invertível, se o determinante não for nulo
+	\footcite[pág. 144, Proposição 3.23]{Cabral2012}, concluímos que
+	$(BC)^2$ não é invertível.
+\end{proof}
+
+\clearpage
+\begin{proposition}[opção 1.d]\label{prop:i-1-d}
+	$CB$ é invertível.
+\end{proposition}
+
+\begin{proof}
+	Pela definição da matriz produto
+	\footcite[pág. 12, Definição 1.18: matriz produto]{Cabral2012},
+	tem-se que:
+	\begin{align*}
+		CB =
+		\begin{bmatrix*}
+			1 & 2
+		\end{bmatrix*}
+		\begin{bmatrix*}[r]
+			-3\\
+			1
+		\end{bmatrix*}
+		=
+		\begin{bmatrix}
+			-1
+		\end{bmatrix} \implies \det (CB) = -1 \neq 0
+	\end{align*}
+	Dado que a matriz só é invertível, se o determinante não for nulo
+	\footcite[pág. 144, Proposição 3.23]{Cabral2012}, concluímos que
+	$CB$ é invertível.
+\end{proof}
+
+\vspace{0.5cm}
+\hrule
+\vspace{0.5cm}
 
 
 \exercicio{}
 
-\paragraph{Resposta:} É a opção b). $\det(-A(B + C)^{-1}) = 3i$.
+\paragraph{\underline{Resposta}}
+
+\paragraph{} É a opção b). $\det(-A(B + C)^{-1}) = 3i$.
+
+
+\paragraph{\underline{Justificação}}
+
 
 \paragraph{}Sejam $A, B, C \in \mathcal{M}_{4 \times 4}(\mathbb{C})$ tais que
 $\det A = 3$, e $\det(B + C) = i$.
 
+\begin{proposition}[negação da opção a]\label{prop:i-2-a}
+	Não existe elementos para calcular $\det(A + B + C)$, pelo que não é
+	possível afirmar que $\det(A + B + C) = 3 + i$.
+\end{proposition}
 
-\begin{align*}
-	\det(-A(B + C)^{-1})
-		   &= (- \det A)  \cdot (\det(B + C))^{-1}\\
-		   &= -\frac{3}{i}
-		   = -\frac{3}{i} \cdot \frac{i}{i}
-		   = 3i
-\end{align*}
+\begin{proof}\;\\
+	Tem-se definidos $\det A$ e $\det(B + C)$, no entanto pelo teorema etc,
+	pelo que não implica que $\det A + \det(B + C) = \det(A + B + C)$.
+	Pelo que a proposição \ref{prop:i-2-a} está demonstrada e a opção a) não
+	está correcta, ou antes não pode ser deduzida dos
+	factos conhecidos.\\
+\end{proof}
+
+
+\begin{proposition}[opção b]\label{prop:i-2-b}
+	$\det(-A(B + C)^{-1}) = 3i$
+\end{proposition}
+
+\begin{proof}[Cálculo do determinante da Proposição \ref{prop:i-2-b}]
+	\begin{align*}
+		\det(-A(B + C)^{-1})
+			   = (- \det A)  \cdot (\det(B + C))^{-1}
+			   = -\frac{3}{i}
+			   = -\frac{3}{i} \cdot \frac{i}{i}
+			   = 3i
+	\end{align*}
+	Pelo que a proposicão \ref{prop:i-2-b} é verdadeira e a opção b) está correcta.\\
+\end{proof}
+
+
+\begin{proposition}[negação da opção c]
+	Não existe elementos para calcular $\det(A^2 BC)$, pelo que não é
+	possível afirmar que $\det(A^2 BC) = 9i$.
+\end{proposition}
+
+\begin{proposition}[negação da opção d]\label{prop:i-2-d}
+	$\det(-(B + C)A^{-1}) \neq \frac{i}{3}$
+\end{proposition}
+
+\begin{proof}[Cálculo do determinante da Proposição \ref{prop:i-2-d}]
+	\begin{align*}
+		\det(-(B + C)A^{-1})
+			   = (-\det(B + C))  \cdot (\det A)^{-1}
+			   = -\frac{i}{3} \neq \frac{i}{3}
+	\end{align*}
+	Pelo que a opção d) não está correcta.\\
+\end{proof}
+
 
 

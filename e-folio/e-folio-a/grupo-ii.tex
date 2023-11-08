@@ -24,6 +24,69 @@
 
 \begin{enumerate}[label=\alph*.]
 	\item $\det A = ?$
+		\begin{align*}
+			\det A
+			&=
+			\det
+			\begin{bmatrix*}[r]
+				3 & 1 & 4 & 0\\
+				0 & 2 & 1 & 1\\
+				0 & 3 & 0 & 1\\
+				0 & 1 & 0 & -2
+			\end{bmatrix*}
+			+
+			\det
+			\begin{bmatrix*}[r]
+				2 & 0 & 3 & 0\\
+				0 & 2 & 1 & 1\\
+				0 & 3 & 0 & 1\\
+				0 & 1 & 0 & -2
+			\end{bmatrix*}\\
+			&=
+			3
+			\det
+			\begin{bmatrix*}[r]
+				 2 & 1 & 1\\
+				 3 & 0 & 1\\
+				 1 & 0 & -2
+			\end{bmatrix*}
+			+
+			2
+			\det
+			\begin{bmatrix*}[r]
+				 2 & 1 & 1\\
+				 3 & 0 & 1\\
+				 1 & 0 & -2
+			\end{bmatrix*}\\
+			&=
+			5
+			\det
+			\begin{bmatrix*}[r]
+				 2 & 1 & 1\\
+				 3 & 0 & 1\\
+				 1 & 0 & -2
+			\end{bmatrix*}\\
+			&=
+			5\left(
+			2
+			\det
+			\begin{bmatrix*}[r]
+				  0 & 1\\
+				  0 & -2
+			\end{bmatrix*}
+			-
+			\det
+			\begin{bmatrix*}[r]
+				 3 & 1\\
+				 1 & -2
+			\end{bmatrix*}
+			+
+			\det
+			\begin{bmatrix*}[r]
+				 3 & 0\\
+				 1 & 0
+			\end{bmatrix*}\right)
+		\end{align*}
 	\item\hfill
 		\begin{proposition}
 			A equação $AX = b$ tem uma solução única
