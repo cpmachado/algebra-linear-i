@@ -9,7 +9,7 @@ all: ${DOCS}
 	@echo todos recursos compilados
 
 2200909efolioA.pdf: e-folio/e-folio-a/2200909efolioA.tex
-	latexmk $(PV) -use-make -pdf $< --auxdir=aux
+	latexmk $(PV) -pdflatex="pdflatex --shell-escape" -use-make -pdf $< --auxdir=aux
 
 exercicios-tema1.pdf: exercicios/tema1/exercicios-tema1.tex
 	latexmk $(PV) -use-make -pdf $< --auxdir=aux

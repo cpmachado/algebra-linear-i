@@ -1,5 +1,8 @@
 \grupo{}
 
+\paragraph{} Tem-se $A \in \mathcal{M}_{5 \times 5}(\mathbb{K})$ e
+$b \in \mathcal{M}_{5 \times 1}(\mathbb{K})$, definidas por:
+
 \begin{align*}
 	A &=
 	\begin{bmatrix*}[r]
@@ -17,82 +20,252 @@
 		2\\
 		r_3\\
 		0
-	\end{bmatrix*}\\
-	r_3 &= 909
+	\end{bmatrix*}
 \end{align*}
 
 
 \begin{enumerate}[label=\alph*.]
-	\item $\det A = ?$
+	\item
+		Pretende-se calcular o determinante de $A$, pelo que se vai recorrer
+		múltiplas vezes ao Teorema de Laplace
+		\parencite[pág. 129, Proposiçãp 3.9, Teorema de Laplace]{Cabral2012},
+		no qual se utiliza a notação mencionada na bibliografia da cadeira.
 		\begin{align*}
 			\det A
 			&=
 			\det
 			\begin{bmatrix*}[r]
-				3 & 1 & 4 & 0\\
+				2 & 1 & 0 & 3 & 0\\
+				3 & -1 & 1 & 4 & 0\\
+				0 & 0 & 2 & 1 & 1\\
+				0 & 0 & 3 & 0 & 1\\
+				0 & 0 & 1 & 0 & -2
+			\end{bmatrix*}\\
+			&
+			\begin{matrix}
+				\text{Lapl.}\\
+				=\\
+				c_1
+			\end{matrix}
+			2
+			\det
+			\begin{bmatrix*}[r]
+				-1 & 1 & 4 & 0\\
 				0 & 2 & 1 & 1\\
 				0 & 3 & 0 & 1\\
 				0 & 1 & 0 & -2
 			\end{bmatrix*}
-			+
-			\det
-			\begin{bmatrix*}[r]
-				2 & 0 & 3 & 0\\
-				0 & 2 & 1 & 1\\
-				0 & 3 & 0 & 1\\
-				0 & 1 & 0 & -2
-			\end{bmatrix*}\\
-			&=
+			-
 			3
 			\det
 			\begin{bmatrix*}[r]
-				 2 & 1 & 1\\
-				 3 & 0 & 1\\
-				 1 & 0 & -2
+				1 & 0 & 3 & 0\\
+				0 & 2 & 1 & 1\\
+				0 & 3 & 0 & 1\\
+				0 & 1 & 0 & -2
+			\end{bmatrix*}\\
+			&
+			\begin{matrix}
+				\text{Lapl.}\\
+				=\\
+				c_1
+			\end{matrix}
+			-2
+			\det
+			\begin{bmatrix*}[r]
+				2 & 1 & 1\\
+				3 & 0 & 1\\
+				1 & 0 & -2
 			\end{bmatrix*}
-			+
+			-
+			3
+			\det
+			\begin{bmatrix*}[r]
+				2 & 1 & 1\\
+				3 & 0 & 1\\
+				1 & 0 & -2
+			\end{bmatrix*}\\
+			&=
+			- 5
+			\det
+			\begin{bmatrix*}[r]
+				2 & 1 & 1\\
+				3 & 0 & 1\\
+				1 & 0 & -2
+			\end{bmatrix*}\\
+			&
+			\begin{matrix}
+				\text{Lapl.}\\
+				=\\
+				l_1
+			\end{matrix}
+			- 5\left(
 			2
 			\det
 			\begin{bmatrix*}[r]
-				 2 & 1 & 1\\
-				 3 & 0 & 1\\
-				 1 & 0 & -2
-			\end{bmatrix*}\\
-			&=
-			5
-			\det
-			\begin{bmatrix*}[r]
-				 2 & 1 & 1\\
-				 3 & 0 & 1\\
-				 1 & 0 & -2
-			\end{bmatrix*}\\
-			&=
-			5\left(
-			2
-			\det
-			\begin{bmatrix*}[r]
-				  0 & 1\\
-				  0 & -2
+				0 & 1\\
+				0 & -2
 			\end{bmatrix*}
 			-
 			\det
 			\begin{bmatrix*}[r]
-				 3 & 1\\
-				 1 & -2
+				3 & 1\\
+				1 & -2
 			\end{bmatrix*}
 			+
 			\det
 			\begin{bmatrix*}[r]
-				 3 & 0\\
-				 1 & 0
-			\end{bmatrix*}\right)
+				3 & 0\\
+				1 & 0
+			\end{bmatrix*}\right)\\
+			&=
+			-5[-[3 \times (-2) - 1 \times 1]]
+			= -35
 		\end{align*}
-	\item\hfill
-		\begin{proposition}
-			A equação $AX = b$ tem uma solução única
-			$X = (x_1, x_2, x_3, x_4, x_5)^T$.
-		\end{proposition}
+		\clearpage
+	\item\;\\
+		Pretende-se calcular o valor de $x_4$.
+		Como $\det A = -35 \neq 0$, podemos utilizar a Regra de
+		Cramer
+		\parencite[pãg. 152, Proposição 3.31(Regra de Cramer]{Cabral2012}.
 		\begin{align*}
-			x_4 = ?
+			x_4 = \frac{\det A_{(4)}}{\det A}
+			&=
+			-
+			\frac{
+				\det
+				\begin{bmatrix*}[r]
+					2 & 1  & 0 & 0   & 0\\
+					3 & -1 & 1 & 1   & 0\\
+					0 & 0  & 2 & 2   & 1\\
+					0 & 0  & 3 & r_3 & 1\\
+					0 & 0  & 1 & 5   & -2
+				\end{bmatrix*}
+			}{
+				35
+			}\\
+			&
+			\begin{matrix}
+				\text{lapl.}\\
+				=\\
+				c_1
+			\end{matrix}
+			-
+			\frac{
+				2
+				\det
+				\begin{bmatrix*}[r]
+					-1 & 1 & 1   & 0\\
+					0  & 2 & 2   & 1\\
+					0  & 3 & r_3 & 1\\
+					0  & 1 & 5   & -2
+				\end{bmatrix*}
+				-
+				3
+				\det
+				\begin{bmatrix*}[r]
+					1  & 0 & 0   & 0\\
+					0  & 2 & 2   & 1\\
+					0  & 3 & r_3 & 1\\
+					0  & 1 & 5   & -2
+				\end{bmatrix*}
+			}{
+				35
+			}\\
+			&
+			\begin{matrix}
+				\text{Lapl.}\\
+				=\\
+				c_1,l_1
+			\end{matrix}
+			-
+			\frac{
+				-2
+				\det
+				\begin{bmatrix*}[r]
+					2 & 2   & 1\\
+					3 & r_3 & 1\\
+					1 & 5   & -2
+				\end{bmatrix*}
+				-
+				3
+				\det
+				\begin{bmatrix*}[r]
+					2 & 2   & 1\\
+					3 & r_3 & 1\\
+					1 & 5   & -2
+				\end{bmatrix*}
+			}{
+				35
+			}\\
+			&
+			\begin{matrix}
+				\text{Lapl.}\\
+				=\\
+				l_1
+			\end{matrix}
+			\frac{
+				\det
+				\begin{bmatrix*}[r]
+					2 & 2   & 1\\
+					3 & r_3 & 1\\
+					1 & 5   & -2
+				\end{bmatrix*}
+			}{
+				7
+			}\\
+			&
+			\begin{matrix}
+				\text{Lapl.}\\
+				=\\
+				l_1
+			\end{matrix}
+			\frac{
+				2
+				\det
+				\begin{bmatrix*}[r]
+					r_3 & 1\\
+					5   & -2
+				\end{bmatrix*}
+				-
+				2
+				\det
+				\begin{bmatrix*}[r]
+					3 & 1\\
+					1 & -2
+				\end{bmatrix*}
+				+
+				\det
+				\begin{bmatrix*}[r]
+					3 & r_3\\
+					1 & 5
+				\end{bmatrix*}
+			}{
+				7
+			}\\
+			&=
+			\frac{
+				2
+				(-2r_3 - 5)
+				-
+				2
+				(-6 -1)
+				+
+				(15 - r_3)
+			}{
+				7
+			}\\
+			&=
+			\frac{
+				-5r_3 + 19
+			}{
+				7
+			}
+			\intertext{
+				Dado que,
+				$r_3 = \text{(número de aluno)}\mod 1000 = 2200909\mod 1000 = 909$,
+				tem-se que
+			}
+			x_4 &= \frac{-5 \times 909 + 19}{7} = -646.57
 		\end{align*}
 \end{enumerate}
