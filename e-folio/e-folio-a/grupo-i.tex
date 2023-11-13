@@ -34,123 +34,64 @@
 	\in
 	\mathcal{M}_{1 \times 2}(\mathbb{K})
 	.
+	\intertext{Vamos agora analisar cada uma das opções}
 \end{align*}
 
-\vspace{0.25cm}
-
-\begin{proposition}[negação da opção 1.a]\label{prop:i-1-a}
-	$AB$ é definido.
-\end{proposition}
-
-\vspace{0.25cm}
-
-\begin{proof}
-	\; \\
-	Pela definição da matriz produto
-	\footcite[pág. 12, Definição 1.18: matriz produto]{Cabral2012},
-	esta só é definida se o número de colunas do
-	operando à esquerda for igual ao número de linhas do operando à
-	direita. Como
-	$A$ tem o mesmo número de colunas que o número de linhas de $B$,
-	então $AB$ é definido.\\
-\end{proof}
-
-\begin{proposition}[negação da opção 1.b]\label{prop:i-1-b}
-	$AC$ não é definido.
-\end{proposition}
-
-\vspace{0.25cm}
-
-\begin{proof}
-	\; \\
-	Pela definição da matriz produto
-	\footcite[pág. 12, Definição 1.18: matriz produto]{Cabral2012},
-	esta só é definida se o número de colunas do
-	operando à esquerda for igual ao número de linhas do operando à
-	direita. Como
-	$A$ tem um número de colunas diferente do número de linhas de $C$,
-	então $AC$ não é definido.\\
-\end{proof}
-
-\begin{proposition}[negação da opção 1.c]\label{prop:i-1-c}
-	$(BC)^2$ não é invertível.
-\end{proposition}
-
-\vspace{0.25cm}
-
-\begin{proof}
-	\; \\
-	Pela definição da matriz produto
-	\footcite[pág. 12, Definição 1.18: matriz produto]{Cabral2012},
-	tem-se que:
-	\begin{align*}
-		BC &=
-		\begin{bmatrix*}[r]
-			-3\\
-			1
-		\end{bmatrix*}
-		\begin{bmatrix*}[r]
-			1  & 2
-		\end{bmatrix*}
-		=
-		\begin{bmatrix*}[r]
-			-3  & -6\\
-			1  & 2\\
-		\end{bmatrix*}
-		\intertext{
-			Dado que as linhas de $BC$ não são linearmente
-			independentes, e que a operação $l_i + \beta l_j$
-			não tem impacto no determinante
-			\footcite[pág. 138, Proposição 3.19, alínea 3.]{Cabral2012},
-			tem-se que:}
-			BC&
-		\overset{l_1 + 3 l_2}{\longrightarrow}
-		\begin{bmatrix*}[r]
-			0  & 0\\
-			1  & 2\\
-		\end{bmatrix*}
-		\implies \det(BC) = 0
-		\intertext{
-			Dado que o determinante da matriz produto é igual ao produto dos
-			determinantes do operandos
-			\footcite[pág. 145, Proposição 3.24]{Cabral2012}, tem-se que:
-		}
-			\det((BC)^2) &= (\det(BC))^2 = 0
-	\end{align*}
-	Dado que a matriz só é invertível, se o determinante não for nulo
-	\footcite[pág. 144, Proposição 3.23]{Cabral2012}, concluímos que
-	$(BC)^2$ não é invertível.\\
-\end{proof}
-
-\clearpage
-\begin{proposition}[opção 1.d]\label{prop:i-1-d}
-	$CB$ é invertível.
-\end{proposition}
-
-\vspace{0.25cm}
-
-\begin{proof}
-	Pela definição da matriz produto
-	\footcite[pág. 12, Definição 1.18: matriz produto]{Cabral2012},
-	tem-se que:
-	\begin{align*}
-		CB =
-		\begin{bmatrix*}
-			1 & 2
-		\end{bmatrix*}
-		\begin{bmatrix*}[r]
-			-3\\
-			1
-		\end{bmatrix*}
-		=
-		\begin{bmatrix}
-			-1
-		\end{bmatrix} \implies \det (CB) = -1 \neq 0
-	\end{align*}
-	Dado que a matriz só é invertível, se o determinante não for nulo
-	\footcite[pág. 144, Proposição 3.23]{Cabral2012}, concluímos que
-	$CB$ é invertível.
-\end{proof}
+\begin{enumerate}[label=\alph*)]
+	\item
+		\begin{itemize}
+			\item Proposição: $AB$ não é definido.
+			\item Valor lógico: Falso
+			\item Justificação:
+		\end{itemize}
+	\item
+		\begin{itemize}
+			\item Proposição: $AC$ é definido.
+			\item Valor lógico: Falso.
+			\item Justificação:
+		\end{itemize}
+	\item
+		\begin{itemize}
+			\item Proposição: $(BC)^2$ é invertível.
+			\item Valor lógico: Falso.
+			\item Justificação:
+				\begin{align*}
+					BC &=
+					\begin{bmatrix*}[r]
+						-3\\
+						1
+					\end{bmatrix*}
+					\begin{bmatrix*}[r]
+						1  & 2
+					\end{bmatrix*}
+					=
+					\begin{bmatrix*}[r]
+						-3 & -6\\
+						1 & 2
+					\end{bmatrix*}\\
+					\implies \det (BC) &= -3 \cdot 2 - (-6)\cdot 1 = 0
+					\iff \det((BC)^2) = \left(\det(BC)\right)^2 = 0
+				\end{align*}
+		\end{itemize}
+	\item
+		\begin{itemize}
+			\item Proposição: $CB$ é invertível.
+			\item Valor lógico: Verdadeiro.
+			\item Justificação:
+				\begin{align*}
+					CB =
+					\begin{bmatrix*}[r]
+						1  & 2
+					\end{bmatrix*}
+					\begin{bmatrix*}[r]
+						-3\\
+						1
+					\end{bmatrix*}
+					=
+					[-1] \implies \det (CB) = -1 \neq 0
+				\end{align*}
+		\end{itemize}
+\end{enumerate}
 
 \clearpage
 
