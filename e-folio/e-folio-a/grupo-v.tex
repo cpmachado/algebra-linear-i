@@ -21,26 +21,20 @@
 \end{align*}
 
 \begin{proposition}
-	$|\det A| = \prod_{k=1}^{n} |a_k|$
+	$\det A = (-1)^p \prod_{k=1}^{n} a_k$, com $p = \lfloor
+	\frac{n}{2}\rfloor$.
 \end{proposition}
 
-\begin{proposition}
-	Seja $A \in \mathcal{M}$ $\det A = \prod_{k=1}^{n} a_k$
-\end{proposition}
-
-\begin{proposition}
-	$\det A = \pm \prod_{k=1}^{n} a_k$
-\end{proposition}
-
-\begin{proof}
-	\; \\
-	\begin{align*}
-		a_{ij} =
-		\begin{cases}
-			0, & j < n - i\\
-			a_i, & j = n - i \\
-			*, & j > n - i
-		\end{cases}
-	\end{align*}
-	Considerar uma linha, e fazer a definição recursiva até 1.
+\begin{proof}\; \\
+	Pode-se observar que a matriz $A$ é equivalente por linhas com uma
+	matriz triangular superior $B$, por sucessivas transformações lineares de
+	$l_i \leftrightarrow l_{n - i}$, com $i = 1, \ldots, \lfloor \frac{n}{2}\rfloor$. Pela Proposição 3.15 da
+	bibliografia\footcite[pág. 135, Proposição 3.15]{Cabral2012}, tem-se que
+	$\det B = \prod_{k=1}^{n} b_k$, o produto dos elementos da diagonal principal de $B$. A
+	partir da Proposição 3.19, alínea 1., da bibliografia
+	\footcite[pág. 138, Proposição 3.19, alínea 1.]{Cabral2012}, tem-se que
+	cada mudança de linhas o determinante é igual ao seu simétrico.
+	Deste modo, com $p = \lfloor\frac{n}{2}\rfloor$ transformações lineares
+	desse tipo, podemos concluir que $\det A = (-1)^p \prod_{k=1}^{n}
+	a_k$.\\
 \end{proof}

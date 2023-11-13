@@ -60,30 +60,120 @@
 	\end{bmatrix*}
 	=
 	\begin{bmatrix*}[r]
-		u_1 + iv1   & u_2 + iv2   & u_3 + iv3 \\
+		u_1 + iv_1   & u_2 + iv_2   & u_3 + iv_3 \\
 		-iu_1 - v_1 & -iu_2 - v_2 & -iu_3 - v_3\\
 		3w_1        & 3w_2        & 3w_3
 	\end{bmatrix*}
-	\intertext{Dado que $XA = AX \iff XA - AX = 0_{3 \times 3}$,
-		vamos determinar $XA - AX$:}
+	\intertext{
+		Tem-se  que $XA - AX$:}
 	XA - AX
 	&= 
 	\begin{bmatrix*}[r]
-		u_1 + iu_2 & iu_1 - u_2 & 3u_3 \\
-		v_1 + iv_2 & iv_1 - v_2 & 3v_3 \\
-		w_1 + iw_2 & iw_1 - w_2 & 3w_3
+		u_1 - iu_2 & iu_1 - u_2 & 3u_3 \\
+		v_1 - iv_2 & iv_1 - v_2 & 3v_3 \\
+		w_1 - iw_2 & iw_1 - w_2 & 3w_3
 	\end{bmatrix*}
 	-
 	\begin{bmatrix*}[r]
-		u_1 + iv1   & u_2 + iv2   & u_3 + iv3 \\
+		u_1 + iv_1   & u_2 + iv_2   & u_3 + iv_3 \\
 		-iu_1 - v_1 & -iu_2 - v_2 & -iu_3 - v_3\\
 		3w_1        & 3w_2        & 3w_3
 	\end{bmatrix*}\\
 	&=
 	\begin{bmatrix*}[r]
-		iu_2 - iv_1        & iu_1 - 2u_2 - iv_2 & 2u_3 -iv_3 \\
-		2v_1 + iv_2 + iu_1 & iv_1 + iu_2        & 4v_3 + iu_3 \\
-		-2w_1 + iw_2       & iw_1 - 4w_2        & 0
+	- i u_{2} - i v_{1}         & i u_{1} - 2 u_{2} - i v_{2} & 2 u_{3} - i v_{3}\\
+	i u_{1} + 2 v_{1} - i v_{2} & i u_{2} + i v_{1}           & i u_{3} + 4 v_{3}\\
+	- 2 w_{1} - i w_{2}         & i w_{1} - 4 w_{2}           & 0
 	\end{bmatrix*}
 \end{align*}
+
+\paragraph{}Dado que $XA = AX \iff XA - AX = 0_{3 \times 3}$, podemos agora
+determinar os vetores $U, V, W$, com base no resultado anterior.
+Para $W$, isolamos o sistema da última linha, dado que só nessa é que tem
+dependência, e pelo qual já concluímos que $w_3$ não tem restrições.
+
+\begin{align*}
+	&
+	\begin{bmatrix*}
+		-2 & -i\\
+		i & -4
+	\end{bmatrix*}
+	\begin{bmatrix}
+		w_1\\
+		w_2
+	\end{bmatrix}
+	=
+	0_{2 \times 1}\\
+	\det &
+	\begin{bmatrix*}
+		-2 & -i\\
+		i & -4
+	\end{bmatrix*}
+	= -2 \cdot (-4) - (-i) \cdot i = 7 \neq 0
+\end{align*}
+
+\paragraph{} Dado que o determinante da matriz simples não é nulo, podemos
+concluir que o sistema é determinado. Dado que o sistema é homogéneo, tem-se
+forçosamente de concluir que, dado que pela regra de Cramer teríamos colunas
+nulas, $(w_1, w_2) = (0, 0)$,
+pelo que se tem $W = (0, 0, w_3)$
+
+\paragraph{}Agora determinamos $u_3$ e $v_3$ pelas equações da última coluna.
+Tem-se que
+\begin{align*}
+	&
+	\begin{bmatrix*}
+		2 & -i\\
+		i & 4
+	\end{bmatrix*}
+	\begin{bmatrix}
+		u_3\\
+		v_3
+	\end{bmatrix}
+	=
+	0_{2 \times 1}\\
+	\det &
+	\begin{bmatrix*}
+		2 & -i\\
+		i & 4
+	\end{bmatrix*}
+	= 2 \cdot 4 - (-i) \cdot i = 7 \neq 0
+\end{align*}
+
+\paragraph{} De forma análoga a $(w_1, w_2)$, tem-se que $(u_3, v_3) = (0, 0)$.
+
+\paragraph{} Determinemos agora $(u_1, u_2, v_1, v_2)$.
+
+\begin{align*}
+	\begin{cases}
+		- i u_2 - i v_1 = 0\\
+		i u_1 - 2 u_2 - i v_2 = 0\\
+		i u_1 + 2 v_1 - i v_2 = 0\\
+		i u_2 + i v_1 = 0
+	\end{cases}
+	\iff
+	\begin{cases}
+		u_2 = - v_1\\
+		i u_1 - 2 u_2 - i v_2 = 0\\
+		i u_1 + 2 v_1 - i v_2 = 0\\
+	\end{cases}
+	\iff
+	\begin{cases}
+		u_2 = - v_1\\
+		i u_1 + 2 v1 - i v_2 = 0\\
+	\end{cases}
+	\iff
+	\begin{cases}
+		u_2 = - v_1\\
+		u_1 = -2v_1 + iv_2\\
+	\end{cases}
+\end{align*}
+
+\paragraph{Por completar}
+
+
+
+
+
+
 
