@@ -1,0 +1,103 @@
+\exercicio{}
+
+\paragraph{\underline{Resposta}}
+
+\paragraph{}É a opção d) $CB$ é invertível.
+
+\paragraph{\underline{Dados do enunciado}}
+
+\begin{align*}
+	\intertext{Tem-se que as matrizes $A$, $B$ e $C$ são definidas por}
+	A =
+	\begin{bmatrix*}[r]
+		2  & 3\\
+		2  & 0\\
+		-3 & 1
+	\end{bmatrix*}
+	\in
+	\mathcal{M}_{3 \times 2}(\mathbb{K})
+	,\;
+	B =
+	\begin{bmatrix*}[r]
+		-3\\
+		1
+	\end{bmatrix*}
+	\in
+	\mathcal{M}_{2 \times 1}(\mathbb{K})
+	 \text{ e }
+	C =
+	\begin{bmatrix*}[r]
+		1  & 2
+	\end{bmatrix*}
+	\in
+	\mathcal{M}_{1 \times 2}(\mathbb{K})
+\end{align*}
+
+\paragraph{\underline{Justificação}}
+
+\paragraph{}Vamos analisar cada uma das opções sequencialmente.
+
+\begin{enumerate}[label=\bfseries\alph*)]
+	\item $AB$ não é definido.\\
+		É uma afirmação falsa.
+			A matriz $A$ tem o mesmo número de colunas que o número de
+			linhas de $B$,
+			pela definição de matriz produto
+			\footcite[pág. 12, Definição 1.18]{Cabral2012}
+			conclui-se que $AB$ é definido.
+	\item $AC$ é definido.\\
+		É uma afirmação falsa.
+			A matriz $A$ não tem o mesmo número de colunas que o número de
+			linhas de $C$,
+			pela definição de matriz produto
+			\footcite[pág. 12, Definição 1.18]{Cabral2012}
+			conclui-se que $AC$ não é definido.
+	\item $(BC)^2$ é invertível.\\
+		É uma afirmação falsa. Calculando o determinante, verifica-se que é
+		nulo, consequentemente, pela Proposição 3.25
+			\footcite[pág. 145, Proposição 3.25]{Cabral2012},
+		$(BC)^2$ não é invertível.
+		\begin{align*}
+			BC &=
+			\begin{bmatrix*}[r]
+				-3\\
+				1
+			\end{bmatrix*}
+			\begin{bmatrix*}[r]
+				1 & 2
+			\end{bmatrix*}
+			=
+			\begin{bmatrix*}[r]
+				-3 & -6\\
+				1  & 2
+			\end{bmatrix*}\\
+			\implies
+			\det(BC) &= -3 \cdot 2 - (-6) \cdot 1 = 0
+			\intertext{Dado que produto do determinante de matrizes é
+			equivalente ao determinante do produto das matrizes
+			\footcite[pág. 145, Proposição 3.24]{Cabral2012}
+		, tem-se}
+			\iff \det((BC)^2) &= \left(\det(BC)\right)^2 = 0
+		\end{align*}
+	\item $CB$ é invertível.\\
+		É uma afirmação verdadeira. Calculando o determinante, verifica-se que
+		não é nulo, consequentemente, pela Proposição 3.25
+			\footcite[pág. 145, Proposição 3.25]{Cabral2012},
+		$CB$ é invertível.
+		\begin{align*}
+			CB =
+			\begin{bmatrix*}[r]
+				1 & 2
+			\end{bmatrix*}
+			\begin{bmatrix*}[r]
+				-3\\
+				1
+			\end{bmatrix*}
+			=
+			\begin{bmatrix*}[r]
+				-1
+			\end{bmatrix*}
+			\implies
+			\det(CB) = -1 \neq 0
+		\end{align*}
+\end{enumerate}

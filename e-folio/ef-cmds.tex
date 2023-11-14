@@ -1,0 +1,15 @@
+\newcommand{\grupo}{
+	\addtocounter{section}{1}
+	\setcounter{subsection}{0}
+	\setcounter{proposition}{0}
+	\section*{\Roman{section}.}
+	\phantomsection
+	\addcontentsline{toc}{section}{Grupo \Roman{section}}
+}
+
+\newcommand{\exercicio}{
+	\addtocounter{subsection}{1}
+	\setcounter{proposition}{0}
+	\subsection*{\arabic{subsection}}
+	\addcontentsline{toc}{subsection}{Exercício \arabic{subsection}}
+}

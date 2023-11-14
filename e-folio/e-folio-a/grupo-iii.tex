@@ -1,0 +1,166 @@
+\grupo{}
+
+\paragraph{\underline{Dados do enunciado}}
+
+\paragraph{} Tem-se o seguinte sistema de equações:
+
+\begin{equation}\label{eq-efa-g3}
+	\begin{cases}
+		ax + cy = 1\\
+		-ax - 2y -az = -3\\
+		2y + 2az = 2c
+	\end{cases},
+	\text{ com } a, c \in \mathbb{R}
+\end{equation}
+
+\paragraph{\underline{Resposta}}
+
+\paragraph{}O sistema:
+
+\begin{itemize}
+	\item tem solução única para
+		$(a, c) \in \mathbb{R}\backslash\{0\} \times
+		\mathbb{R}\backslash\{1\}$;
+	\item não tem solução para $(a, c) \in \mathbb{R}\backslash\{0\} \times \mathbb{R}
+		\cup \mathbb{R} \times \mathbb{R}\backslash\{1\}$
+\end{itemize}
+
+\paragraph{\underline{Resolução}}
+
+\paragraph{}O sistema de equações em \textbf{(\ref{eq-efa-g3})}, pode ser escrito na
+forma $AX = b$, da seguinte forma:
+
+\begin{align*}
+	\begin{bmatrix*}[r]
+		a  & c  & 0\\
+		-a & -2 & -a\\
+		0  & 2  & 2a
+	\end{bmatrix*}&
+	\begin{bmatrix*}[r]
+		x\\
+		y\\
+		z
+	\end{bmatrix*}
+	=
+	\begin{bmatrix*}[r]
+		1\\
+		-3\\
+		2c
+	\end{bmatrix*}
+\end{align*}
+
+\paragraph{} Calculemos agora o determinante da matriz simples:
+
+\begin{align*}
+	\det A
+	&=
+	\det
+	\begin{bmatrix*}[r]
+		a  & c  & 0\\
+		-a & -2 & -a\\
+		0  & 2  & 2a
+	\end{bmatrix*}\\
+	&
+	\begin{matrix}
+		\text{Lapl.}\\
+		=\\
+		c_1
+	\end{matrix}
+	a
+	\det
+	\begin{bmatrix*}[r]
+		-2 & -a\\
+		2  & 2a
+	\end{bmatrix*}
+	-
+	(-a)
+	\det
+	\begin{bmatrix*}[r]
+		c  & 0\\
+		2  & 2a
+	\end{bmatrix*}\\
+	&
+	=
+	a\left(
+		(-2) \cdot 2a
+		- (-a) 2
+	+
+		2a \cdot c\right)\\
+	&
+	=
+	2a^2\left(
+		(-2)
+		+ 1
+	+
+		c\right) = 2a^2(c - 1)
+\end{align*}
+
+\paragraph{}O sistema vai ter solução única tal que $\det A \neq 0$, para
+$(a, c) \in \mathbb{R}\backslash\{0\} \times \mathbb{R}\backslash\{1\}$.
+
+\begin{align*}
+	\det A &= 0
+	\iff 0 = 2a^2(c - 1)
+	\iff a = 0 \quad \lor \quad  c = 1
+\end{align*}
+
+\paragraph{}Agora analisemos o caso $a = 0$. Voltando ao sistema definido em
+\textbf{(\ref{eq-efa-g3})}, tem-se:
+
+\begin{align*}
+	\begin{cases}
+		cy = 1\\
+		- 2y = -3\\
+		2y = 2c
+	\end{cases}
+	\iff
+	\begin{cases}
+		c = y^{-1}\\
+		y = \frac{3}{2}\\
+		y = c
+	\end{cases}
+	\iff
+	\begin{cases}
+		c = \frac{2}{3}\\
+		y = \frac{3}{2}\\
+		c = \frac{2}{3}
+	\end{cases}
+\end{align*}
+
+\paragraph{}Pelo que se tem uma inconsistência, dado que $c$ não pode assumir
+dois valores díspares ao mesmo tempo. Conclui-se que o sistema é impossível
+para $a = 0$.
+
+\paragraph{}Consideremos o caso $c = 1$:
+
+\begin{align*}
+	&
+	\begin{cases}
+		ax + y = 1\\
+		-ax -2y -az = -3\\
+		2y + 2az = 2
+	\end{cases}
+	\iff 
+	\begin{cases}
+		y = 1 - ax\\
+		-ax -y -y -az = -3\\
+		y = 1 - az
+	\end{cases}\\
+	\iff
+	&
+	\begin{cases}
+		y = 1 - ax\\
+		-ax -(1 - ax) -(1 - az) -az = -3\\
+		y = 1 - az
+	\end{cases}
+	\iff
+	\begin{cases}
+		y = 1 - ax\\
+		-2 = -3\\
+		y = 1 - az
+	\end{cases}
+\end{align*}
+
+\paragraph{}Dado que $-2 \neq -3$, porque o contrário seria uma
+inconsistência, podemos concluir que o sistema é impossível, para $c = 1$.
+
